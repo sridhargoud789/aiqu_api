@@ -1,0 +1,15 @@
+runtime: nodejs20
+
+env: standard
+
+entrypoint: npm run start
+
+env_variables:
+  SECRET_KEY: 'asd1213bhvg32524jasdknjg'
+  JWT_EXPIRES_IN: '8h'
+
+handlers:
+  - url: /assets
+    static_dir: dist/assets
+  - url: /.*
+    script: auto
